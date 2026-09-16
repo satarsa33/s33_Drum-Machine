@@ -1,36 +1,36 @@
-# Web Drum Machine
+# Web Drum Machine V2
 
-Prototipo statico di una drum machine web-based, senza backend e senza dipendenze esterne.
+Prototipo serio e **100% statico**, pensato per GitHub Pages.
 
-## Avvio locale
-Apri `index.html` in un browser moderno. Per alcune funzioni audio il browser potrebbe richiedere un click sulla pagina.
-
-## Pubblicazione su GitHub Pages
-1. Crea un repository GitHub, ad esempio `web-drum-machine`.
-2. Carica `index.html`.
-3. Vai in **Settings → Pages**.
-4. In **Build and deployment**, scegli **Deploy from a branch**.
-5. Seleziona `main` e `/ (root)`, poi salva.
-6. GitHub pubblicherà automaticamente il sito.
-
-## Cosa include
+## Funzioni
 - 10 tracce / 16 step
-- Play / Stop
-- BPM e swing
-- Mute / Solo
-- Volume per traccia
-- Kick, snare, clap, hi-hat e percussioni sintetizzati con Web Audio API
-- Velocity, probability e microtiming per step
-- Pitch e decay per traccia
-- Randomize
-- Salvataggio/caricamento del pattern con localStorage
-- Layout responsive
+- Web Audio API con synth drum built-in
+- caricamento locale di WAV / MP3 / OGG
+- waveform del sample
+- pitch, decay, filtro, pan e send per traccia
+- velocity / probability / microtiming per step
+- swing + humanize
+- randomizer
+- mute all
+- reverb, delay e compressor sul bus master
+- pattern 1–4
+- pattern chain
+- salvataggio/caricamento JSON
+- export MIDI
+- export WAV tramite OfflineAudioContext
+- nessun backend e nessuna libreria esterna
 
-## Prossimi passi consigliati
-- upload e gestione di sample WAV/MP3
-- vero motore di scheduling look-ahead
-- export WAV con OfflineAudioContext
-- delay/reverb reali
-- pattern chaining
-- MIDI input/output
-- salvataggio dei pattern come JSON
+## GitHub Pages
+Carica `index.html` in un repository e attiva:
+
+**Settings → Pages → Deploy from a branch → main → /(root)**
+
+## Nota sui sample
+I sample caricati vengono decodificati **solo nel browser** e non vengono inviati a un server. Il JSON salva il pattern e i parametri, non il contenuto binario dei sample: dopo aver ricaricato un JSON, gli eventuali sample custom vanno ricaricati.
+
+## Struttura
+```text
+web-drum-machine-v2/
+├── index.html
+└── README.md
+```

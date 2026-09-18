@@ -1,36 +1,21 @@
-# Web Drum Machine V2
+# Web Drum Machine V3
 
-Prototipo serio e **100% statico**, pensato per GitHub Pages.
+Versione statica pronta per GitHub Pages. Nessun npm, backend o libreria esterna.
 
 ## Funzioni
 - 10 tracce / 16 step
-- Web Audio API con synth drum built-in
-- caricamento locale di WAV / MP3 / OGG
-- waveform del sample
-- pitch, decay, filtro, pan e send per traccia
-- velocity / probability / microtiming per step
-- swing + humanize
-- randomizer
-- mute all
-- reverb, delay e compressor sul bus master
-- pattern 1–4
-- pattern chain
-- salvataggio/caricamento JSON
-- export MIDI
-- export WAV tramite OfflineAudioContext
-- nessun backend e nessuna libreria esterna
+- 4 pattern + pattern chain in playback
+- Web Audio scheduler
+- velocity, probability, microtiming, swing, humanize
+- sample WAV/MP3/OGG + waveform
+- pitch, decay, filtro, volume, pan, send
+- mute/solo
+- reverb, delay, compressor
+- undo/redo
+- salvataggio IndexedDB
+- export JSON, MIDI, WAV
 
 ## GitHub Pages
-Carica `index.html` in un repository e attiva:
+Carica questi file nella root del repository. Poi Settings > Pages > Deploy from a branch > main > /(root).
 
-**Settings → Pages → Deploy from a branch → main → /(root)**
-
-## Nota sui sample
-I sample caricati vengono decodificati **solo nel browser** e non vengono inviati a un server. Il JSON salva il pattern e i parametri, non il contenuto binario dei sample: dopo aver ricaricato un JSON, gli eventuali sample custom vanno ricaricati.
-
-## Struttura
-```text
-web-drum-machine-v2/
-├── index.html
-└── README.md
-```
+Per test locale usa un server HTTP, ad esempio `python -m http.server 8000`.
